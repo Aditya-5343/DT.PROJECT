@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Help Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #4facfe;
+      outline: none;
+      box-shadow: 0 0 8px rgba(79, 172, 254, 0.4);
+    }
+
+    button {
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #444;
+    }
+
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Success Message Style */
+    .success {
+      display: none;
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🎓</div>
+    <h2>Student Help Portal</h2>
+    <p>Submit your problem and our staff will contact you soon.</p>
+
+    <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" onsubmit="showMessage()">
+      <!-- Replace adipachpute5343@gmail.comwith your email -->
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="problem" rows="4" placeholder="Describe your problem..." required></textarea>
+
+      <!-- Optional hidden input to disable captcha -->
+      <input type="hidden" name="_captcha" value="false">
+      
+      <!-- Redirect to same page after submit -->
+      <input type="hidden" name="_next" value="https://thankyou.page/">
+
+      <button type="submit">Submit Problem</button>
+    </form>
+
+    <div class="success" id="successMsg">✅ Problem Submitted Successfully!</div>
+
+    <footer>
+      © 2025 | Made with ❤️ by <a href="#">By Aditya R Pachpute</a>
+    </footer>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('successMsg').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('successMsg').style.display = 'none';
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
